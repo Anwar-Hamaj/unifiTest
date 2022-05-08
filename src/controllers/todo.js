@@ -15,7 +15,20 @@ exports.getAllTodo = (req, res, next) => {
     .catch(() => res.status(404).send({ message: "Nothing To show .." }));
 };
 
-
+exports.getOneTodoInfo = (req, res) => {
+  const { userId } = JWT.verify(req.headers.token, "secretKey");
+  const id = req.params.id;
+  const user = new mongoose.Types.ObjectId(userId);
+  Todo.findOne({
+    _id: id,
+    User: user,
+  })
+    .then((todo) => {
+      if (!todo) return res.status(200).send({ message: "_id is not exist" });
+      res.status(200).send({ todo: todo });
+    })
+    .catch(() => res.status(404).send({ message: "Nothing To show .." }));
+};
 
 exports.createTodo = (req, res) => {
   const text = req.body.text;
