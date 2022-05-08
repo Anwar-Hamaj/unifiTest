@@ -1,0 +1,178 @@
+{
+	"info": {
+		"_postman_id": "4814020f-59f9-422a-b8b1-908ff451c1d4",
+		"name": "unifi test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "sign up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "anwarr.hamaj@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:8000/auth/sign-up"
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/auth/log-in?email=anwar.hamaj@gmail.com&password=123456789",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"log-in"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "anwar.hamaj@gmail.com"
+								},
+								{
+									"key": "password",
+									"value": "123456789"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Todo",
+			"item": [
+				{
+					"name": "create todo",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFud2Fyci5oYW1hakBnbWFpbC5jb20iLCJ1c2VySWQiOiI2Mjc4MGE5NjI2OTczNzUxNzZlYTUzNTkiLCJpYXQiOjE2NTIwMzQxOTh9.3oNb06G3Ya4BOmk-aYE3DFFpQujcFvtkPLv6kB_c-HI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "text",
+									"value": "do homework",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:8000/todo"
+					},
+					"response": []
+				},
+				{
+					"name": "get todo info",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFud2Fyci5oYW1hakBnbWFpbC5jb20iLCJ1c2VySWQiOiI2Mjc4MGE5NjI2OTczNzUxNzZlYTUzNTkiLCJpYXQiOjE2NTIwMzQxOTh9.3oNb06G3Ya4BOmk-aYE3DFFpQujcFvtkPLv6kB_c-HI",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:8000/todo//62780fa36b608213d6281260"
+					},
+					"response": []
+				},
+				{
+					"name": "get all todo",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFud2Fyci5oYW1hakBnbWFpbC5jb20iLCJ1c2VySWQiOiI2Mjc4MGE5NjI2OTczNzUxNzZlYTUzNTkiLCJpYXQiOjE2NTIwMzQxOTh9.3oNb06G3Ya4BOmk-aYE3DFFpQujcFvtkPLv6kB_c-HI",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:8000/todo"
+					},
+					"response": []
+				},
+				{
+					"name": "update todo",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFud2Fyci5oYW1hakBnbWFpbC5jb20iLCJ1c2VySWQiOiI2Mjc4MGE5NjI2OTczNzUxNzZlYTUzNTkiLCJpYXQiOjE2NTIwMzQxOTh9.3oNb06G3Ya4BOmk-aYE3DFFpQujcFvtkPLv6kB_c-HI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "text",
+									"value": "do anything",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:8000/todo/627817348fc5ebb92cfdd3d2"
+					},
+					"response": []
+				},
+				{
+					"name": "delete todo",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFud2Fyci5oYW1hakBnbWFpbC5jb20iLCJ1c2VySWQiOiI2Mjc4MGE5NjI2OTczNzUxNzZlYTUzNTkiLCJpYXQiOjE2NTIwMzQxOTh9.3oNb06G3Ya4BOmk-aYE3DFFpQujcFvtkPLv6kB_c-HI"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "text",
+									"value": "do anything",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:8000/todo/6278106f6b608213d6281264"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
